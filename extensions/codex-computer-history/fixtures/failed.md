@@ -1,0 +1,8 @@
+- Source ID: codex-computer-history
+- Capability: activity-history
+- Window: 2026-01-01 09:00–10:00 local
+- Status: failed
+- Summary: History collection failed.
+- Facts: None.
+- Provenance: Synthetic fixture; no live event stream.
+- Diagnostic: Source returned a bounded test failure.

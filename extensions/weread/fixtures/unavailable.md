@@ -1,0 +1,8 @@
+- Source ID: weread
+- Capability: reading-history
+- Window: 2026-01-01 local day
+- Status: unavailable
+- Summary: WeRead access unavailable in this Agent Surface.
+- Facts: None.
+- Provenance: Synthetic fixture; no live WeRead account.
+- Diagnostic: External Skill or account authorization unavailable.

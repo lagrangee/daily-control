@@ -1,0 +1,7 @@
+- Source ID: example-source
+- Capability: example-capability
+- Window: 2026-01-01
+- Status: complete
+- Summary: Source checked; no matching facts.
+- Facts: None.
+- Provenance: Synthetic fixture; no live source.

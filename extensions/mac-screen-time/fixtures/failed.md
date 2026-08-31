@@ -1,0 +1,8 @@
+- Source ID: mac-screen-time
+- Capability: device-usage
+- Window: 2026-01-01 local day
+- Status: failed
+- Summary: Selected Screen Time collection method failed.
+- Facts: None.
+- Provenance: Synthetic fixture; no live Screen Time data.
+- Diagnostic: Bounded test collection error.

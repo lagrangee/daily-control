@@ -1,0 +1,8 @@
+- Source ID: mac-screen-time
+- Capability: device-usage
+- Window: 2026-01-01 local day
+- Status: partial
+- Summary: Synthetic aggregate available for one device only.
+- Facts: Reading category 42 minutes on laptop.
+- Provenance: Synthetic fixture; no live Screen Time data.
+- Diagnostic: Phone aggregate unavailable.

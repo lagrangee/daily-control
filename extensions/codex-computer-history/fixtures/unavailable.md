@@ -1,0 +1,8 @@
+- Source ID: codex-computer-history
+- Capability: activity-history
+- Window: 2026-01-01 09:00–10:00 local
+- Status: unavailable
+- Summary: Computer History capability unavailable in this Agent Surface.
+- Facts: None.
+- Provenance: Synthetic fixture; no live event stream.
+- Diagnostic: Required external Skill is not installed or accessible.

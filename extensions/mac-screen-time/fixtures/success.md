@@ -1,0 +1,7 @@
+- Source ID: mac-screen-time
+- Capability: device-usage
+- Window: 2026-01-01 local day
+- Status: complete
+- Summary: Synthetic aggregate device usage recorded.
+- Facts: Reading category 42 minutes; productivity category 68 minutes.
+- Provenance: Synthetic fixture; no live Screen Time data.

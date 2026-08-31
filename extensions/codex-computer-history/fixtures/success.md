@@ -1,0 +1,7 @@
+- Source ID: codex-computer-history
+- Capability: activity-history
+- Window: 2026-01-01 09:00–10:00 local
+- Status: complete
+- Summary: Synthetic editor and browser activity observed.
+- Facts: Editor active 09:05–09:32; documentation page active 09:35–09:48.
+- Provenance: Synthetic fixture; no live event stream.

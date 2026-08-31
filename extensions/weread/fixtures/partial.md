@@ -1,0 +1,8 @@
+- Source ID: weread
+- Capability: reading-history
+- Window: 2026-01-01 local day
+- Status: partial
+- Summary: One synthetic title returned without duration.
+- Facts: “Example Book” appeared in reading history.
+- Provenance: Synthetic fixture; no live WeRead account.
+- Diagnostic: Duration was unavailable.

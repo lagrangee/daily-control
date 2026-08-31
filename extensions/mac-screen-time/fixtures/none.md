@@ -1,0 +1,7 @@
+- Source ID: mac-screen-time
+- Capability: device-usage
+- Window: 2026-01-01 local day
+- Status: complete
+- Summary: Screen Time checked; no usage recorded for the requested device and window.
+- Facts: None.
+- Provenance: Synthetic fixture; no live Screen Time data.

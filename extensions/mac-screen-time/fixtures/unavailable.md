@@ -1,0 +1,8 @@
+- Source ID: mac-screen-time
+- Capability: device-usage
+- Window: 2026-01-01 local day
+- Status: unavailable
+- Summary: Screen Time data unavailable to the selected method.
+- Facts: None.
+- Provenance: Synthetic fixture; no live Screen Time data.
+- Diagnostic: User-visible access or Agent capability is absent.

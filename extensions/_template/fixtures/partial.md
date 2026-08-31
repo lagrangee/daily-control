@@ -1,0 +1,8 @@
+- Source ID: example-source
+- Capability: example-capability
+- Window: 2026-01-01
+- Status: partial
+- Summary: Some synthetic facts returned; part of the window was unavailable.
+- Facts: Example partial fact.
+- Provenance: Synthetic fixture; no live source.
+- Diagnostic: Missing second half of requested window.

@@ -1,0 +1,7 @@
+- Source ID: weread
+- Capability: reading-history
+- Window: 2026-01-01 local day
+- Status: complete
+- Summary: Source checked; no reading activity found.
+- Facts: None.
+- Provenance: Synthetic fixture; no live WeRead account.

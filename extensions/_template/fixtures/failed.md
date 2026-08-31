@@ -1,0 +1,8 @@
+- Source ID: example-source
+- Capability: example-capability
+- Window: 2026-01-01
+- Status: failed
+- Summary: Collection failed.
+- Facts: None.
+- Provenance: Synthetic fixture; no live source.
+- Diagnostic: Source returned a bounded test error.

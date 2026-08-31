@@ -1,0 +1,8 @@
+- Source ID: weread
+- Capability: reading-history
+- Window: 2026-01-01 local day
+- Status: failed
+- Summary: WeRead collection failed.
+- Facts: None.
+- Provenance: Synthetic fixture; no live WeRead account.
+- Diagnostic: Source returned a bounded test failure.

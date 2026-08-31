@@ -1,0 +1,8 @@
+- Source ID: codex-computer-history
+- Capability: activity-history
+- Window: 2026-01-01 09:00–10:00 local
+- Status: partial
+- Summary: Synthetic activity available through 09:30 only.
+- Facts: Editor active 09:05–09:22.
+- Provenance: Synthetic fixture; no live event stream.
+- Diagnostic: Event history did not cover 09:30–10:00.

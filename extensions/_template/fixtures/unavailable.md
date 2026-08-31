@@ -1,0 +1,8 @@
+- Source ID: example-source
+- Capability: example-capability
+- Window: 2026-01-01
+- Status: unavailable
+- Summary: Source access unavailable.
+- Facts: None.
+- Provenance: Synthetic fixture; no live source.
+- Diagnostic: Required permission not granted.
