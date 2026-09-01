@@ -20,7 +20,7 @@ Draft a small outcome-focused plan with realistic constraints and a next action.
 
 Show the plan before writing. Let the user revise or confirm priorities, commitments, and any override.
 
-Write the confirmed plan into the Daily record's `## Open` section, preserving other sections. Read it back.
+Write the confirmed plan into the Daily record's `## Open` section, preserving other sections. Keep `### Policy overrides` as `- None.` when no override was confirmed; otherwise replace it with the confirmed current-day override. Read it back.
 
 Complete when the durable Daily record matches the user's confirmation.
 

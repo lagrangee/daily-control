@@ -14,6 +14,7 @@ SKILL = ROOT / "skills" / "daily-control"
 
 REQUIRED = (
     "README.md",
+    "README.zh-CN.md",
     "GUIDE.md",
     "LICENSE",
     "docs/acceptance.md",

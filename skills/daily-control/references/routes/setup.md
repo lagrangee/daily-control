@@ -21,7 +21,7 @@ Complete when every collision has a user-approved resolution.
 
 ## 3. Create the scaffold
 
-Copy or faithfully reproduce the scaffold assets only within the target. Always include templates, contracts, and `context/control-policy.md`; include the Fitness and Reading starter Area files only when the user selects them. Replace angle-bracket prompts only when the user has supplied the value; otherwise leave an explicit question in the instance.
+Copy or faithfully reproduce the scaffold assets only within the target. Always include templates, contracts, and `context/control-policy.md`; include the Fitness and Reading starter Area files only when the user selects them. The assets are canonical in English; when the user's language is clear from the conversation or Context Root, adapt human-readable prose while preserving paths, owned headings, stable field names, and enumerated values. Replace angle-bracket prompts only when the user has supplied the value; otherwise leave an explicit question in the instance.
 
 Ask for stable preferences that materially affect the loop: locale, timezone, week start, selected Areas, privacy notes, and refresh write mode. Keep them as plain Markdown.
 

@@ -23,7 +23,7 @@ Setup always creates `context/control-policy.md`. You may configure outcome limi
 
 `/daily-control open` creates or resumes today's Daily record, checks your current constraints, proposes a plan, and writes only after you confirm it. It also refreshes the rebuildable `context/now.md` working summary.
 
-When the Control Policy is configured, open checks the proposal against it. A conflict remains visible: you may revise the plan or confirm a current-day override. The override is recorded in the Daily record and does not silently change the long-term policy.
+When the Control Policy is configured, open checks the proposal against it. A conflict remains visible: you may revise the plan or confirm a current-day override. The Daily record keeps the result under `### Policy overrides`; an override does not silently change the long-term policy.
 
 ### Refresh
 

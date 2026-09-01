@@ -1,5 +1,7 @@
 # Daily Control
 
+English | [简体中文](README.zh-CN.md)
+
 **Let an AI agent help run your day without silently owning your priorities.**
 
 Daily Control is an agent-native, local-first control loop built from ordinary conversations and durable Markdown. The Agent helps you plan, check factual evidence, reflect, and recover context; you retain authority over priorities, constraints, interpretation, permissions, and consequential changes.
@@ -37,6 +39,36 @@ extend
 
 Natural-language requests such as “use Daily Control to open my day” select the same routes. `/daily-control <route>` is the recommended explicit syntax, not a dependency on one Agent Surface.
 
+## See the control loop
+
+This synthetic example uses a Control Policy configured by the user; Daily Control supplies no default limits.
+
+```text
+You: I want to move Atlas, Billing, and Launch today.
+
+Agent: Your configured policy allows one Primary Outcome, and today's
+       capacity is about four hours. Putting all three into today's plan
+       conflicts with that policy. Which outcome should lead?
+
+You: Keep Atlas primary. Move Billing to tomorrow and leave Launch in backlog.
+
+Agent: Proposed Open: Atlas is the Primary Outcome; Billing is tomorrow's
+       anchor; Launch remains in backlog. No policy override is needed.
+       Shall I write this plan?
+
+You: Yes. Later: /daily-control shutdown
+
+Agent: Source Evidence shows three hours of coding activity on Atlas. That
+       proves activity, not that Atlas shipped. What actually moved today?
+
+You: The core flow works locally, but review is still pending.
+
+Agent: I will record that outcome, the pending review, and Billing as the
+       next anchor in today's durable Shutdown. Shall I commit it?
+```
+
+Policy surfaces the tradeoff, the user decides, Evidence stays factual, and the resulting judgment becomes durable history only after confirmation.
+
 ## Truth flow
 
 ```text
@@ -55,8 +87,10 @@ Daily Control is not an AI journal that turns activity into a score, and it is n
 Install the standalone Skill from GitHub with the open-source [`skills`](https://github.com/vercel-labs/skills) installer:
 
 ```bash
-npx skills add lagrangee/daily-control
+npx skills add lagrangee/daily-control -g
 ```
+
+Global installation makes the Skill available across Context Roots. Omit `-g` when you intentionally want a project-scoped installation that can be shared with that repository.
 
 Or copy the complete [`skills/daily-control`](skills/daily-control/) folder into the skills location used by your Agent Surface. Keep the folder intact: it includes its own license, route guidance, contracts, and scaffold assets and does not depend on this repository's `docs/` or `extensions/` directories.
 
