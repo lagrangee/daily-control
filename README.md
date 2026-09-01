@@ -82,6 +82,37 @@ External Sources ──▶ Evidence ──▶ Durable Records ──▶ context/
 
 Daily Control is not an AI journal that turns activity into a score, and it is not another application runtime. Plans, source-attributed Evidence, human interpretation, and derived context remain separate. There is no Daily Control app, CLI, database, background scheduler, or required Obsidian plugin.
 
+## From Sources to Evidence
+
+Daily Control separates the fact you need from the method used to obtain it:
+
+- An **Evidence Capability** names a useful kind of fact, such as `activity-history`, `device-usage`, or `reading-history`.
+- A **Source Adapter** is one concrete way to supply that fact: manual observation, an Agent tool, an external Skill, or an optional bundled Skill.
+- A **Source Contract** is a plain Markdown boundary for that adapter. It records permissions, what the source reads, what Daily Control may write, provenance, known limits, and whether the source is enabled.
+
+```text
+Useful fact ──▶ Capability ──▶ Adapter ──▶ disabled Source Contract
+                                              │
+                                   sample · preview · acceptance
+                                              │
+                                              ▼
+                                      refresh ──▶ Daily Evidence
+```
+
+`/daily-control extend` creates the contract disabled, checks a representative result, previews the minimal projection, and enables the source only after acceptance. `/daily-control refresh` uses enabled contracts and preserves `complete`, `partial`, `unavailable`, or `failed` status. Credentials, raw responses, full histories, and high-frequency data remain at the source; the Context Root receives only decision-relevant facts and provenance.
+
+### Included Extensions
+
+The repository currently includes these optional integration guides:
+
+| Extension | Capability | Method | Verification |
+| --- | --- | --- | --- |
+| [Codex Computer History](extensions/codex-computer-history/) | `activity-history` | External Skill | Reference-only |
+| [macOS Screen Time](extensions/mac-screen-time/) | `device-usage` | Manual observation or available Agent tool | Reference-only |
+| [WeRead](extensions/weread/) | `reading-history` | External Skill | Reference-only |
+
+`Reference-only` means the repository provides the integration boundary, projection guidance, and acceptance procedure—not a pre-enabled or universally verified connector. The core `extend` route works without this catalog and can integrate another user-named source. See the [Extension documentation](docs/extensions.md) for details and contribution rules.
+
 ## Install
 
 Install the standalone Skill from GitHub with the open-source [`skills`](https://github.com/vercel-labs/skills) installer:
