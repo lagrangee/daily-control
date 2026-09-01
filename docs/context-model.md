@@ -16,6 +16,12 @@ The user owns consequential judgment: priorities, long-term direction, important
 
 Daily, Weekly, Area, Project, Routine, and Evidence records are durable history. `context/now.md` is a rebuildable Context Summary that helps an Agent recover the active working set. When they disagree, durable records win.
 
+### Control Policy
+
+`context/control-policy.md` contains reusable, user-owned planning constraints: outcome limits, capacity boundary, foreground WIP, and the default handling of new scope. It begins unconfigured and has no system-supplied limits.
+
+The Agent surfaces a conflict between a proposed Daily plan and a configured policy. The user may revise the plan or confirm a current-day override. The override belongs in that Daily record; setup or a separately confirmed weekly review owns changes to the long-term policy.
+
 ### Area, Project, and Routine
 
 | Concept | Meaning | Example |
@@ -52,7 +58,7 @@ Evidence is a source-attributed fact or observation. It may inform reflection bu
 ```text
 Context Root constitution
         ↓
-preferences and instance contracts
+preferences, Control Policy, and instance contracts
         ↓
 Agent route procedure
         ↓

@@ -2,6 +2,8 @@
 
 Daily Control helps you and an Agent maintain useful context without turning your life into an application database. You speak naturally; the Agent uses the installed Skill and your Markdown Context Root to plan, gather factual evidence, and reflect with you.
 
+Run `/daily-control` or `/daily-control help` at any time for a read-only route summary. Inside a valid Context Root, it may suggest one next route from today's durable record; it never runs the suggestion automatically.
+
 ## 1. Choose a Context Root
 
 A Context Root is the directory that contains your Daily Control files. It may be an Obsidian vault, a folder inside a vault, or a normal local directory. Sync and backup are external choices.
@@ -13,11 +15,15 @@ Run `/daily-control setup` from the intended directory. Choose:
 
 The installed Skill detects only the current working directory. If it is not a valid Context Root, the Agent asks you for the target instead of scanning elsewhere.
 
+Setup always creates `context/control-policy.md`. You may configure outcome limits, a capacity boundary, foreground WIP, and a default rule for new scope, or leave the policy explicitly unconfigured. Daily Control supplies no default limits.
+
 ## 2. Use the control loop
 
 ### Open
 
 `/daily-control open` creates or resumes today's Daily record, checks your current constraints, proposes a plan, and writes only after you confirm it. It also refreshes the rebuildable `context/now.md` working summary.
+
+When the Control Policy is configured, open checks the proposal against it. A conflict remains visible: you may revise the plan or confirm a current-day override. The override is recorded in the Daily record and does not silently change the long-term policy.
 
 ### Refresh
 
@@ -32,6 +38,8 @@ Evidence describes what a source reported. It does not decide whether you were p
 ### Weekly review
 
 `/daily-control weekly-review` reviews a closed weekly interval across Daily records, Areas, Projects, and Routines. Scheduling is not built in; you and your Agent Surface decide when to invoke it.
+
+A weekly review may propose a Control Policy change, but the Agent writes it only after separate confirmation.
 
 ## 3. Organize context
 

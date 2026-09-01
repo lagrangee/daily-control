@@ -1,6 +1,6 @@
 # Open route
 
-Use the confirmed Context Root. Read its `AGENTS.md`, `context/preferences.md`, `context/now.md`, and [`../context-root.md`](../context-root.md).
+Use the confirmed Context Root. Read its `AGENTS.md`, `context/preferences.md`, `context/now.md`, [`../context-root.md`](../context-root.md), and `context/control-policy.md` when present. A missing policy in an older root means no policy applies.
 
 ## 1. Resolve today's record
 
@@ -10,13 +10,15 @@ Complete when exactly one Daily record is selected without overwriting existing 
 
 ## 2. Check in
 
-Ask compactly for current mode or energy, capacity, constraints, intended outcomes, and fixed commitments. Use existing context to avoid asking for facts already known; invite corrections.
+Ask compactly for current mode or energy, capacity, constraints, intended outcomes, and fixed commitments. Use existing context to avoid asking for facts already known; invite corrections. When the Control Policy is configured, use it as the user's default planning constraints.
 
 Complete when the user has supplied or confirmed enough context for today's plan.
 
 ## 3. Propose and commit the plan
 
-Draft a small outcome-focused plan with realistic constraints and a next action. Show it before writing. Let the user revise or confirm priorities and commitments.
+Draft a small outcome-focused plan with realistic constraints and a next action. Compare it with each configured Control Policy field. Name any conflict and ask the user to revise the plan or confirm a current-day override; an override belongs in today's Daily record and does not modify the Control Policy.
+
+Show the plan before writing. Let the user revise or confirm priorities, commitments, and any override.
 
 Write the confirmed plan into the Daily record's `## Open` section, preserving other sections. Read it back.
 

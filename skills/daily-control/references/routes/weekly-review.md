@@ -1,6 +1,6 @@
 # Weekly review route
 
-Read the Context Root `AGENTS.md`, preferences, [`../context-root.md`](../context-root.md), and the durable records covering the closed interval.
+Read the Context Root `AGENTS.md`, preferences, [`../context-root.md`](../context-root.md), the Control Policy when present, and the durable records covering the closed interval. A missing policy in an older root means no policy applies.
 
 ## 1. Confirm the interval
 
@@ -18,9 +18,9 @@ Complete when every material claim has a durable source or is labeled as a user 
 
 ## 3. Confirm and commit
 
-Show the draft and separately name any proposed priority, Project, Routine, or constraint change. The user decides those changes.
+Show the draft and separately name any proposed priority, Project, Routine, Control Policy, or other constraint change. The user decides those changes.
 
-Write the confirmed review to the matching Weekly record and read it back. Apply separately confirmed changes to their owner records, then read those back.
+Write the confirmed review to the matching Weekly record and read it back. Apply separately confirmed changes to their owner records, including `context/control-policy.md` when applicable, then read those back. A current-day override is not evidence that the long-term policy should change.
 
 Complete when durable records match the user's decisions.
 

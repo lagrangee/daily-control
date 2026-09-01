@@ -9,6 +9,7 @@ README.md
 AGENTS.md
 Inbox.md
 context/
+  control-policy.md
   preferences.md
   now.md
   contracts/
@@ -28,6 +29,8 @@ archive/
 
 The scaffold assets provide templates and initial Capability Contracts. Additional notes may coexist anywhere in an adopted root.
 
+An older Context Root may lack `context/control-policy.md`. Treat it as unconfigured and continue the requested route; setup may add the missing file after preview and confirmation.
+
 ## Canonical truth
 
 - Daily and Weekly files preserve completed cadence history.
@@ -35,6 +38,7 @@ The scaffold assets provide templates and initial Capability Contracts. Addition
 - Project files preserve finite outcomes and their status.
 - Routine files preserve recurring practices.
 - Evidence files preserve extension-owned detail when a Daily projection is insufficient.
+- `context/control-policy.md` preserves configured, user-owned planning constraints. `Status: not configured` means that no Control Policy applies.
 - `context/now.md` is derived routing context. Rebuild it from durable records when stale or contradictory.
 
 ## Links, not nesting

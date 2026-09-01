@@ -11,4 +11,4 @@ Before opening a change:
 5. Follow the Extension acceptance criteria in [docs/extensions.md](docs/extensions.md) for adapter contributions.
 6. Run the checks in [docs/acceptance.md](docs/acceptance.md) that match your change.
 
-Changes that introduce executable code must name the concrete need, dependencies, permission boundary, and verification evidence. Commodity capabilities also follow [docs/agents/buy-vs-build.md](docs/agents/buy-vs-build.md).
+Changes that introduce executable code must name the concrete need, dependencies, permission boundary, and verification evidence.

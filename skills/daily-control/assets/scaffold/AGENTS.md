@@ -1,6 +1,6 @@
 # Daily Control Context Root
 
-This directory is the user's private, local-first context. Read `context/preferences.md` and `context/now.md`, then load only the contracts and durable records relevant to the current request.
+This directory is the user's private, local-first context. Read `context/preferences.md`, `context/control-policy.md`, and `context/now.md`, then load only the contracts and durable records relevant to the current request.
 
 ## Authority
 
@@ -9,6 +9,8 @@ The user decides priorities, important constraints, interpretation, permissions,
 ## Truth
 
 Daily, Weekly, Area, Project, Routine, and Evidence records are canonical. `context/now.md` is a rebuildable routing cache; durable records win when they conflict.
+
+A configured `context/control-policy.md` contains user-owned default constraints. Surface conflicts for the user; record a confirmed current-day override in the Daily record without silently changing the policy.
 
 ## Writes
 

@@ -21,14 +21,16 @@ Complete when every collision has a user-approved resolution.
 
 ## 3. Create the scaffold
 
-Copy or faithfully reproduce the scaffold assets only within the target. Always include templates and contracts; include the Fitness and Reading starter Area files only when the user selects them. Replace angle-bracket prompts only when the user has supplied the value; otherwise leave an explicit question in the instance.
+Copy or faithfully reproduce the scaffold assets only within the target. Always include templates, contracts, and `context/control-policy.md`; include the Fitness and Reading starter Area files only when the user selects them. Replace angle-bracket prompts only when the user has supplied the value; otherwise leave an explicit question in the instance.
 
 Ask for stable preferences that materially affect the loop: locale, timezone, week start, selected Areas, privacy notes, and refresh write mode. Keep them as plain Markdown.
+
+Ask whether to configure the Control Policy now. If yes, record only user-supplied outcome limits, capacity boundary, foreground WIP, and new-scope rule, then set `Status: configured`. If no, preserve `Status: not configured` and every `unset` value. Do not supply default limits.
 
 Complete when every required Context Root path exists and pre-existing content remains intact.
 
 ## 4. Read back
 
-Read back `AGENTS.md`, preferences, the Daily and Evidence Contracts, and any merged file. Summarize the active Areas, write mode, and absence or presence of enabled Sources.
+Read back `AGENTS.md`, preferences, Control Policy, the Daily and Evidence Contracts, and any merged file. Summarize the active Areas, write mode, Control Policy status, and absence or presence of enabled Sources.
 
 Complete when the readback matches the approved setup. Suggest `/daily-control open` as a next action without running it automatically.
