@@ -6,7 +6,9 @@ Daily Control manages context for an Agent and a person; it does not model a per
 
 ### Context Root
 
-The user-confirmed directory containing one private Daily Control instance. All Daily Control writes remain inside it. The current working directory is accepted only when it already has the Context Root markers; otherwise the Agent asks for the intended directory.
+The user-confirmed directory containing one private Daily Control instance. Daily Control content writes remain inside it. A user-level locator at `~/.daily-control/config.md` stores the default as one `Context Root` field with an absolute path; setup or an explicit request to change the default may write this file outside the root.
+
+Root resolution follows the [Skill contract](../skills/daily-control/SKILL.md#resolve-the-context-root): explicit invocation path, saved default, then a marked cwd only when no configuration exists. A valid selected root is reused without confirmation. Invalid or inaccessible selected paths and configurations require repair instead of silent fallback. The locator is not planning state or access permission; surfaces share it only when they can access the same home and root.
 
 ### Human Authority
 

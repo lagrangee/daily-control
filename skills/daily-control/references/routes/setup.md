@@ -4,7 +4,7 @@ Read [`../context-root.md`](../context-root.md), then establish one user-confirm
 
 ## 1. Confirm target and mode
 
-Use the current working directory when the user confirms it; otherwise ask for a target. Offer:
+Use the target already named by the user. Otherwise offer the saved default when present, or the current working directory, and confirm the setup target. An inaccessible or invalid saved target needs an explicit repair or replacement. Offer:
 
 - **Create** for an empty or new directory.
 - **Adopt** for a directory with existing content.
@@ -13,11 +13,11 @@ Complete when the target path and mode are explicit.
 
 ## 2. Inspect and preview
 
-List existing target entries relevant to scaffold collisions. Show which scaffold files would be created, which existing files would be preserved, and which collisions need a merge decision. Do not write during this step.
+List existing target entries relevant to scaffold collisions. Show which scaffold files would be created, which existing files would be preserved, and which collisions need a merge decision. Include saving the target as the default in `~/.daily-control/config.md`, following the [saved-default contract](../context-root.md#saved-default). Do not write during this step.
 
 In Adopt mode, preserve existing content. If an existing `AGENTS.md`, `README.md`, or matching contract needs Daily Control guidance, propose the smallest merge and obtain confirmation.
 
-Complete when every collision has a user-approved resolution.
+Complete when the scaffold and default-path preview are approved and every collision has a user-approved resolution.
 
 ## 3. Create the scaffold
 
@@ -33,4 +33,10 @@ Complete when every required Context Root path exists and pre-existing content r
 
 Read back `AGENTS.md`, preferences, Control Policy, the Daily and Evidence Contracts, and any merged file. Summarize the active Areas, write mode, Control Policy status, and absence or presence of enabled Sources.
 
-Complete when the readback matches the approved setup. Suggest `/daily-control open` as a next action without running it automatically.
+Complete when the Context Root readback matches the approved setup.
+
+## 5. Save the default
+
+Save the verified target using the saved-default contract and read the configuration back. Report the configuration path and saved Context Root. If saving fails, report the scaffold as established and the default as unsaved or unverified; do not claim full setup success.
+
+Complete when the configuration readback matches the approved target. Explain that subsequent calls can use this default from any cwd on Agent Surfaces with access to the same home and root. Suggest `/daily-control open` as a next action without running it automatically.

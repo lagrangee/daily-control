@@ -29,9 +29,9 @@ If the intent is ambiguous, ask one short question naming the likely routes.
 
 For `help` or a bare invocation, show one-line descriptions of setup, open, refresh, shutdown, weekly-review, and extend. Do not write or run the suggested route.
 
-If the current directory lacks either Context Root marker, recommend setup and explain that an existing root must be named directly; do not scan for one.
+Resolve the Context Root using the rules below. If no root is available, show the routes and recommend setup or naming an existing root. If a selected path or saved configuration is invalid or inaccessible, explain what needs repair. Keep help read-only in both cases.
 
-When both markers exist, read the Context Root `AGENTS.md`, preferences, today's Daily record when present, and Source Contracts. Recommend at most one next route from durable content rather than heading presence alone:
+When a root is resolved, read its `AGENTS.md`, preferences, today's Daily record when present, and Source Contracts. Recommend at most one next route from durable content rather than heading presence alone:
 
 - No Daily record or no confirmed Open content: **open**.
 - Confirmed Open, incomplete Shutdown, and at least one enabled Source whose current Evidence is not refreshed: **refresh**.
@@ -43,13 +43,21 @@ List weekly-review in the help text, but do not infer that it is due. Treat `con
 
 ## Resolve the Context Root
 
-For routes other than setup and help, accept the current working directory only when it contains both `AGENTS.md` and `context/contracts/daily.md`. Otherwise ask the user for the Context Root. Do not scan other directories or use a global registry.
+For every route except setup, resolve in this order and stop at the first selected path:
 
-For setup, the user may choose the current directory or name another target. The setup route establishes the markers.
+1. A Context Root explicitly named by the user for this invocation.
+2. The `Context Root` field in `~/.daily-control/config.md`.
+3. The current working directory, only when no saved configuration exists and it contains both `AGENTS.md` and `context/contracts/daily.md`.
+
+Validate that the selected directory is accessible and contains both markers, then use it without asking the user to confirm it again. An invalid explicit path, unreadable or malformed configuration, or invalid saved root requires repair or an explicit replacement; do not silently fall through to cwd or scan other directories. If no root is available, ask for one (help only explains the options). Ordinary invocations, including explicit one-time overrides, leave the saved default unchanged.
+
+The user-level configuration is plain Markdown with exactly one `Context Root: /absolute/path` field. `~` means the current user's home; store the root as an absolute path. It is a locator, not planning state. For setup or a user-requested change to the saved default, read [`references/context-root.md`](references/context-root.md#saved-default). Sharing it across Agent Surfaces requires the same home, an available Skill, and access to the configuration and root; the saved path does not grant filesystem permissions.
+
+Setup establishes or adopts the user-selected root and saves the default through its route.
 
 ## Invariants
 
-- Keep every Daily Control write inside the confirmed Context Root.
+- Keep every Daily Control content write inside the resolved Context Root. The sole outside-root exception is `~/.daily-control/config.md` during setup or a user-requested default change.
 - Read the Context Root `AGENTS.md` before changing context.
 - Treat durable Daily, Weekly, Area, Project, Routine, and Evidence records as canonical. `context/now.md` is a rebuildable cache.
 - Treat a configured `context/control-policy.md` as user-owned default constraints. Surface conflicts and let the user confirm a current-day override without silently changing the policy.

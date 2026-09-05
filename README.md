@@ -18,7 +18,7 @@ Four boundaries keep that relationship honest:
 ```text
 You: /daily-control
 
-Agent: This directory is not a Daily Control Context Root.
+Agent: No default Context Root is saved, and this directory is not one.
        Suggested next route: /daily-control setup
 
 You: /daily-control setup
@@ -27,7 +27,7 @@ Agent: I can create a new Markdown Context Root or adopt this directory.
        I will preview every file and collision before writing.
 ```
 
-After setup, the same bare command reads only the confirmed Context Root and suggests one next route without running it:
+After setup, the same bare command uses the saved Context Root from any working directory and suggests one next route without running it:
 
 ```text
 help
@@ -132,6 +132,10 @@ Then open the directory you want to use as your Context Root and invoke:
 ```
 
 The Skill does not scan your machine for another Context Root. Setup can create a new one or adopt an existing directory without overwriting its content.
+
+Successful setup saves the default root in `~/.daily-control/config.md`. Later calls use an explicitly named root first, then the saved default, then a valid current directory when no configuration exists. The Agent checks the selected root without asking you to confirm it again. A broken path or configuration prompts repair instead of a silent switch. Naming a root for one call leaves the default unchanged; ask to remember another root to change it.
+
+Agent Surfaces can share this default when they load the Skill and can access the same home directory and Context Root. Cloud or isolated environments need their own accessible path or mount; the configuration does not grant access.
 
 ## Control loop
 
