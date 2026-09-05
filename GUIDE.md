@@ -2,7 +2,7 @@
 
 Daily Control helps you and an Agent maintain useful context without turning your life into an application database. You speak naturally; the Agent uses the installed Skill and your Markdown Context Root to plan, gather factual evidence, and reflect with you.
 
-Run `/daily-control` or `/daily-control help` at any time for a read-only route summary. Inside a valid Context Root, it may suggest one next route from today's durable record; it never runs the suggestion automatically.
+Run `/daily-control` or `/daily-control help` at any time for a read-only route summary. With a valid resolved Context Root, it may suggest one next route from today's durable record; it never runs the suggestion automatically.
 
 ## 1. Choose a Context Root
 
@@ -13,7 +13,11 @@ Run `/daily-control setup` from the intended directory. Choose:
 - **Create** for an empty or new directory.
 - **Adopt** for a directory that already contains notes. The Agent previews additions and conflicts and preserves existing content.
 
-The installed Skill detects only the current working directory. If it is not a valid Context Root, the Agent asks you for the target instead of scanning elsewhere.
+Setup previews and saves the default Context Root in `~/.daily-control/config.md`, then reads it back before reporting full success. Later calls use a root explicitly named for that invocation, otherwise the saved default, otherwise a valid current working directory when no configuration exists. Valid roots need no repeated confirmation. Invalid selected paths or configurations require repair rather than a silent fallback; the Skill never scans elsewhere.
+
+To change the default for an existing root, ask the Agent to remember its path. It validates the root and updates only the locator; it need not recreate the scaffold. A one-time path override leaves the default unchanged. Older roots remain usable without a configuration file, and you can ask to remember them without rerunning setup.
+
+The default works across working directories and Agent Surfaces that load the Skill and can access the same user home and root. An isolated or cloud surface needs an accessible path or mount of its own. A saved path does not grant filesystem permissions.
 
 Setup always creates `context/control-policy.md`. You may configure outcome limits, a capacity boundary, foreground WIP, and a default rule for new scope, or leave the policy explicitly unconfigured. Daily Control supplies no default limits.
 

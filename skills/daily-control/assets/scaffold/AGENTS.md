@@ -14,7 +14,7 @@ A configured `context/control-policy.md` contains user-owned default constraints
 
 ## Writes
 
-- Keep every Daily Control write inside this Context Root.
+- Keep every Daily Control content write inside this Context Root. Setup or a user-requested default change may also update the locator at `~/.daily-control/config.md` under the Skill's saved-default contract.
 - Follow the owner and boundaries in `context/contracts/`.
 - Preserve user-authored content outside the selected route's owned section.
 - Write and read back durable records before updating `context/now.md`.

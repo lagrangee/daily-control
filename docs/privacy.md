@@ -4,7 +4,8 @@ Daily Control is local-first, but local storage alone does not guarantee privacy
 
 ## Context Root boundary
 
-- The Agent uses only the user-confirmed Context Root for Daily Control writes.
+- The Agent uses only the resolved Context Root for Daily Control content writes. Setup or an explicit default-change request may also update `~/.daily-control/config.md`, the sole outside-root locator.
+- The locator contains a private absolute path and stays outside the distributed package. Sharing it across Agent Surfaces requires access to the same home and root; it grants no filesystem permissions.
 - Setup in Adopt mode preserves existing content and previews collisions.
 - Source permissions are explicit in a plain Markdown Source Contract.
 - Credentials remain in the source's approved secret store or Agent Surface, never in the Context Root.

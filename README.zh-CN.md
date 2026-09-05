@@ -65,12 +65,16 @@ npx skills add lagrangee/daily-control -g
 
 Setup 可以创建一个新的 Context Root，也可以采用已有目录。真正写入前，Agent 会先展示将要新增的文件和可能发生的冲突；已有内容不会被静默覆盖。
 
+Setup 成功后，默认 Context Root 会保存在 `~/.daily-control/config.md`。以后换到其他工作目录，也可以直接调用。Agent 依次使用本次明确指定的路径、保存的默认路径；没有配置时，才检查当前目录。路径有效就直接使用，无需再次确认；路径或配置失效时会提示修复，不会悄悄换目录。临时指定另一处路径不会改变默认值；想更换默认值，直接要求 Agent 记住新的 Context Root 即可。
+
+不同 Agent 只要能加载 Skill，并能访问同一个用户主目录和 Context Root，就能共享这个默认值。云端或隔离环境仍需要配置可访问的路径或挂载目录，保存路径本身不会授予访问权限。
+
 如果你还没有 Context Root，直接输入 `/daily-control` 也可以：
 
 ```text
 你：/daily-control
 
-Agent：当前目录还不是 Daily Control Context Root。
+Agent：还没有保存默认 Context Root，当前目录也不是。
        建议下一步：/daily-control setup
 ```
 
