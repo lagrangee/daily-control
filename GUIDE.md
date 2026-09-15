@@ -35,6 +35,8 @@ Situation, Judgment, Direction, and Plan are optional Open sections. The Agent p
 
 When the Control Policy is configured, open checks the proposal against it. A conflict remains visible: you may revise the plan or confirm a current-day override. The Daily record keeps the result under `### Policy overrides`; an override does not silently change the long-term policy.
 
+A later Open can revisit a meaningful intervention using its recorded reason and available feedback. If it did not help, the discussion can revise the judgment instead of repeating the advice. A brief reconsideration condition is useful when it clarifies the choice; no score, review date, or scheduled follow-up is required.
+
 ### Refresh
 
 `/daily-control refresh` asks enabled Sources for factual Evidence. It shows the proposed Daily Evidence update before writing unless `context/preferences.md` says `Refresh write mode: auto` or you explicitly request automatic writing for the current call.
@@ -43,13 +45,15 @@ Evidence describes what a source reported. It does not decide whether you were p
 
 ### Shutdown
 
-`/daily-control shutdown` helps you record outcomes, drift, learning, and the next anchor. Reflection remains yours: the Agent drafts from your statements and available Evidence, then asks you to confirm consequential interpretation.
+`/daily-control shutdown` first drafts a closeout from today's Daily, saved Evidence, and the current conversation when available. You supply material missing interpretation or corrections, rather than repeat the day. Earlier conversations on another Agent Surface are not assumed accessible; missing or partial Evidence remains unknown, and Refresh runs only on request.
+
+The closeout can preserve a judgment, recovery direction, or unresolved question without requiring completed tasks or a next action. Your explicit decisions confirm accurate recording; new consequential interpretation or carry-forward needs confirmation. The Agent preserves Open, Evidence, and unrelated content, reads back Shutdown, then updates the existing summary only when needed. An unchanged closeout can finish without a write.
 
 ### Weekly review
 
 `/daily-control weekly-review` reviews a closed weekly interval across Daily records, Areas, Projects, and Routines. Scheduling is not built in; you and your Agent Surface decide when to invoke it.
 
-A weekly review may propose a Control Policy change, but the Agent writes it only after separate confirmation.
+When the reviewed records support it, the review can also discuss whether an intervention helped or the loop created unnecessary ceremony. This uses the existing review space, not another questionnaire. Lasting changes to priorities, Control Policy, Controller Style, or other constraints are separately confirmed before the Agent updates their owner records.
 
 ## 3. Organize context
 

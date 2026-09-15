@@ -58,13 +58,14 @@ Agent: Proposed Open: Atlas is the Primary Outcome; Billing is tomorrow's
 
 You: Later: /daily-control shutdown
 
-Agent: Source Evidence shows three hours of coding activity on Atlas. That
-       proves activity, not that Atlas shipped. What actually moved today?
+Agent: Draft closeout: Atlas was today's direction; saved Evidence records
+       three hours of coding activity, with delivery status unknown. Billing
+       remains the agreed next anchor. Is there a material outcome to add?
 
 You: The core flow works locally, but review is still pending.
 
-Agent: I will record that outcome, the pending review, and Billing as the
-       next anchor in today's durable Shutdown. Shall I commit it?
+Agent: I will record your reported local result and pending review, preserving
+       Billing as the agreed next anchor in today's durable Shutdown.
 ```
 
 Policy surfaces the tradeoff, the user decides, Evidence stays factual, and the resulting judgment becomes durable history only after confirmation.
@@ -167,8 +168,8 @@ Agent Surfaces can share this default when they load the Skill and can access th
 
 - **open** observes existing context, discusses what matters, and records a confirmed direction or judgment when useful. Execution plans remain subject to configured Control Policy; unchanged context needs no write.
 - **refresh** gathers enabled Sources into minimal, source-attributed Evidence.
-- **shutdown** records outcomes, drift, learning, and the next anchor without converting Evidence into judgment.
-- **weekly-review** reviews a closed interval and commits policy or priority changes only after separate confirmation.
+- **shutdown** drafts from available records first, asks for material corrections, and preserves judgments or recovery without requiring tasks. New consequential interpretation or carry-forward needs confirmation.
+- **weekly-review** reviews a closed interval, including supported lessons about the control loop itself. Lasting policy, priority, or Controller Style changes need separate confirmation.
 - **extend** integrates another Evidence Source through an explicit capability, permission, preview, and enablement boundary.
 
 See [GUIDE.md](GUIDE.md) for the complete user workflow.

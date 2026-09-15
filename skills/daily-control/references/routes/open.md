@@ -26,7 +26,7 @@ Complete when the user has enough context to decide, including a well-framed unr
 
 ## 3. Decide; plan when useful
 
-Establish the user's choice, or leave the direction unchanged. Revisit relevant earlier interventions: an ineffective suggestion may call for revising the judgment, rather than repeating the advice. When useful, briefly capture why the direction was chosen and what would warrant reconsideration; no review date, score, task, or scheduled follow-up is required.
+Establish the user's choice, or leave the direction unchanged. At an appropriate later Open, recover a relevant intervention and its reason from durable records, then assess available feedback before repeating advice. If it did not help or its premise is contradicted, discuss revising the judgment. Missing feedback remains uncertainty, not proof of success or failure. When useful, briefly capture why the direction was chosen and what would warrant reconsideration; no review date, score, task, or scheduled follow-up is required.
 
 If execution planning helps, propose outcomes, constraints, and a next action at useful granularity. Compare the proposal with each configured Control Policy field. Surface conflicts and let the user revise the proposal or confirm a current-day override. Even without a plan, make effects on existing commitments and consequential constraints visible. Long-term policy changes remain separately confirmed work under their owning route.
 

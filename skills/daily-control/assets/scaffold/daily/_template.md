@@ -30,6 +30,8 @@ Overall status: not refreshed
 
 ## Shutdown
 
+<!-- Use only useful reflection sections; a judgment or recovery day need not supply tasks or a next action. -->
+
 ### Outcomes
 
 -

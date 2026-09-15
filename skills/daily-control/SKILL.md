@@ -3,7 +3,7 @@ name: daily-control
 description: Use only when the user explicitly invokes Daily Control. A local Markdown control loop for understanding the situation, choosing direction, planning when useful, and reflecting.
 license: MIT. See LICENSE
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Daily Control

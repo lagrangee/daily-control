@@ -33,14 +33,14 @@ Agent：那今天的主目标是 Atlas；Billing 是明天的起点；Launch 暂
 
 你：到了晚上：/daily-control shutdown
 
-Agent：Evidence 显示你在 Atlas 上有三小时 coding activity。
-       这只能证明你做过，不能证明 Atlas 已经交付。
-       你认为今天真正完成了什么？
+Agent：收尾草案：今天的方向是 Atlas；已存 Evidence 记录了三小时 coding
+       activity，但交付状态未知。Billing 仍是已定的下一步起点。
+       有没有需要补充的重要结果？
 
 你：核心流程已经能在本地跑通，但还没完成 review。
 
-Agent：我会把“本地流程跑通”、待完成的 review，以及明天从 Billing 开始
-       写进今天的 Shutdown。确认后它才会成为长期记录。
+Agent：我会记录你报告的本地结果和待完成的 review，保留已定的 Billing 起点，
+       写进今天的 Shutdown。
 ```
 
 这就是 Daily Control 的核心：Policy 负责暴露取舍，你负责决定；Evidence 保持诚实，经过确认的判断才进入长期记录。
@@ -108,8 +108,8 @@ Agent：还没有保存默认 Context Root，当前目录也不是。
 
 - **open**：先读已有上下文，再讨论当前判断与方向；计划有用时才做计划，并检查 Control Policy。没有新的长期信息，可以不写记录。
 - **refresh**：从已经启用的 Source 获取事实，写成带来源的最小 Evidence。
-- **shutdown**：区分事实和你的判断，记录今天真正完成了什么、哪里发生偏移、明天从哪里接上。
-- **weekly-review**：回看一个已经结束的周期；涉及长期 Policy 或优先级的变更，需要单独确认。
+- **shutdown**：先从已有记录起草收尾，只问重要缺口或修正；判断或恢复也能收尾，不必交出任务结果。新提出的重要解释或后续承诺需要确认。
+- **weekly-review**：回看一个已经结束的周期，有依据时也讨论控制循环本身是否有用；长期 Policy、优先级或 Controller Style 变更需要单独确认。
 - **extend**：接入新的 Evidence Source；先确认用途和权限，再验证样本、预览写入，最后决定是否启用。
 
 `/daily-control help` 或单独输入 `/daily-control` 可以查看 route 摘要。Agent 最多建议一条下一步 route，不会自动运行。
