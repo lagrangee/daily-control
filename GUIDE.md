@@ -1,6 +1,6 @@
 # Daily Control Guide
 
-Daily Control helps you and an Agent maintain useful context without turning your life into an application database. You speak naturally; the Agent uses the installed Skill and your Markdown Context Root to plan, gather factual evidence, and reflect with you.
+Daily Control helps you and an Agent maintain useful context without turning your life into an application database. Explicitly invoke Daily Control, then speak naturally; the Agent uses the installed Skill and your Markdown Context Root to observe, discuss, decide, plan when useful, and reflect with you. Ordinary project discussion does not initiate the Skill.
 
 Run `/daily-control` or `/daily-control help` at any time for a read-only route summary. With a valid resolved Context Root, it may suggest one next route from today's durable record; it never runs the suggestion automatically.
 
@@ -21,11 +21,17 @@ The default works across working directories and Agent Surfaces that load the Sk
 
 Setup always creates `context/control-policy.md`. You may configure outcome limits, a capacity boundary, foreground WIP, and a default rule for new scope, or leave the policy explicitly unconfigured. Daily Control supplies no default limits.
 
+Optional Controller Style in the root's `AGENTS.md` controls conversational directness and depth, separately from planning constraints. Defaults work without a style interview; adoption preserves your existing preferences. Style does not grant permissions or replace factual accuracy and Human Authority.
+
 ## 2. Use the control loop
 
 ### Open
 
-`/daily-control open` creates or resumes today's Daily record, checks your current constraints, proposes a plan, and writes only after you confirm it. It also refreshes the rebuildable `context/now.md` working summary.
+`/daily-control open` reads your constitution, preferences, policy, current summary, and today's Daily with its saved Evidence before asking. It verifies direction against durable records and follows relevant history when a change, repeated failure, or unresolved decision needs context. Missing Evidence is a coverage gap, not proof of inactivity; Open does not automatically refresh sources.
+
+On a stable day, a short exchange may be enough. After an interruption, start from current reality without reconstructing missed check-ins. The outcome may be recovery, exploration, a judgment, an unresolved question, an unchanged direction, or an execution plan. Questions follow the decision, not a fixed questionnaire.
+
+Situation, Judgment, Direction, and Plan are optional Open sections. The Agent preserves old Daily formats and existing content. Your explicit decision confirms accurate recording without field-by-field reconfirmation; new consequential interpretations or commitments need your confirmation. When no durable information changes, Open can finish without writing. Otherwise, it writes and reads back the owned Daily content before updating the derived `context/now.md` only if needed.
 
 When the Control Policy is configured, open checks the proposal against it. A conflict remains visible: you may revise the plan or confirm a current-day override. The Daily record keeps the result under `### Policy overrides`; an override does not silently change the long-term policy.
 

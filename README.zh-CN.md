@@ -6,7 +6,7 @@
 
 **让 Agent 真正帮你推进一天，但不替你决定什么重要。**
 
-Daily Control 不是一个新的日程 App，而是一套让 Agent 围绕你自己的 Markdown 文件工作的日常控制方法。它帮你在开工前收敛目标、工作中核对事实、收工时留下能继续接手的上下文；优先级怎么排、证据意味着什么、哪些内容可以写入，始终由你决定。
+Daily Control 不是一个新的日程 App，而是一套让 Agent 围绕你自己的 Markdown 文件工作的日常控制方法。在你明确调用后，它先观察已有上下文，和你讨论判断与方向，需要时再做计划，并在收工时留下能继续接手的上下文；优先级怎么排、证据意味着什么、哪些内容可以写入，始终由你决定。
 
 它刻意守住四条边界：
 
@@ -20,7 +20,7 @@ Daily Control 不是一个新的日程 App，而是一套让 Agent 围绕你自�
 下面只是一个示例。里面“一天只保留一个主目标”的规则来自用户自己的 Control Policy，不是 Daily Control 的默认设置。
 
 ```text
-你：今天想同时推进 Atlas、Billing 和 Launch。
+你：/daily-control open，今天想同时推进 Atlas、Billing 和 Launch。
 
 Agent：你给自己定的规则是一天只保留一个 Primary Outcome，
        今天大约有四小时。三个项目一起排会超出这个边界。
@@ -29,9 +29,9 @@ Agent：你给自己定的规则是一天只保留一个 Primary Outcome，
 你：Atlas。Billing 放到明天，Launch 先留在 backlog。
 
 Agent：那今天的主目标是 Atlas；Billing 是明天的起点；Launch 暂不进入计划。
-       这次不需要临时 override。确认后我再写入今天的 Open。
+       这次不需要临时 override。你已经明确选择，我会据此写入今天的 Open。
 
-你：确认。到了晚上：/daily-control shutdown
+你：到了晚上：/daily-control shutdown
 
 Agent：Evidence 显示你在 Atlas 上有三小时 coding activity。
        这只能证明你做过，不能证明 Atlas 已经交付。
@@ -44,6 +44,22 @@ Agent：我会把“本地流程跑通”、待完成的 review，以及明天�
 ```
 
 这就是 Daily Control 的核心：Policy 负责暴露取舍，你负责决定；Evidence 保持诚实，经过确认的判断才进入长期记录。
+
+Open 也可以停在判断或方向，不必产出任务：
+
+```text
+你：/daily-control open，旅行回来后，我还没想清楚 Atlas 是否该继续。
+
+Agent：上次 Shutdown 留下了验收标准分歧。所读两份记录中的阅读 Evidence
+       增加了，但项目活动的覆盖缺失，不能据此判断原因。
+       验收分歧现在仍是让下一步不明确的关键吗？
+
+你：是的。今天先重新理解这些标准，不承诺执行任务。
+
+Agent：我会把这个选择和仍未解决的问题写进 Open。
+```
+
+稳定的一天可以沿用已有方向，不需要重新填写签到表或改写记录；中断后从现状接上，不补写错过的日记。Context Root 的 `AGENTS.md` 可选配置 Controller Style，表达讨论和挑战偏好；它与 Control Policy 中的计划约束分开。
 
 ## 快速开始
 
@@ -78,7 +94,7 @@ Agent：还没有保存默认 Context Root，当前目录也不是。
        建议下一步：/daily-control setup
 ```
 
-Setup 完成后，`/daily-control` 会根据当天的长期记录给出一条下一步建议，但不会替你执行。自然语言也可以，例如“用 Daily Control 帮我开始今天”。`/daily-control <route>` 只是推荐的明确写法，不绑定某一种 Agent。
+普通项目讨论不会自动启动 Daily Control。Setup 完成后，`/daily-control` 会根据当天的长期记录给出一条下一步建议，但不会替你执行。自然语言也可以，例如“用 Daily Control 帮我开始今天”。`/daily-control <route>` 只是推荐的明确写法，不绑定某一种 Agent。
 
 ## 日常怎么用
 
@@ -90,7 +106,7 @@ Setup 完成后，`/daily-control` 会根据当天的长期记录给出一条下
 /daily-control extend
 ```
 
-- **open**：确认今天的状态、可用时间和目标；如果计划撞上 Control Policy，先把冲突摆出来，再由你取舍。
+- **open**：先读已有上下文，再讨论当前判断与方向；计划有用时才做计划，并检查 Control Policy。没有新的长期信息，可以不写记录。
 - **refresh**：从已经启用的 Source 获取事实，写成带来源的最小 Evidence。
 - **shutdown**：区分事实和你的判断，记录今天真正完成了什么、哪里发生偏移、明天从哪里接上。
 - **weekly-review**：回看一个已经结束的周期；涉及长期 Policy 或优先级的变更，需要单独确认。

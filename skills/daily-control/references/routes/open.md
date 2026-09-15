@@ -1,31 +1,48 @@
 # Open route
 
-Use the confirmed Context Root. Read its `AGENTS.md`, `context/preferences.md`, `context/now.md`, [`../context-root.md`](../context-root.md), and `context/control-policy.md` when present. A missing policy in an older root means no policy applies.
+Use the resolved Context Root. Open follows Observe → Surface → Discuss → Decide → Plan if useful. A useful outcome may be a judgment, recovery, exploration, an unresolved question, an unchanged direction, or an execution plan.
 
-## 1. Resolve today's record
+## 1. Observe
 
-Use the user's local date according to preferences. If date or timezone is genuinely ambiguous, ask. Resume an existing `daily/YYYY-MM-DD.md`; otherwise prepare one from `daily/_template.md`.
+Read the root's `AGENTS.md` (including any Controller Style), `context/preferences.md`, `context/control-policy.md` when present, `context/now.md`, and today's `daily/YYYY-MM-DD.md` when it exists. A missing or unconfigured policy supplies no default limits. Use the user's local date from preferences; ask only if it is genuinely ambiguous. Select today's path without creating a file yet.
 
-Complete when exactly one Daily record is selected without overwriting existing content.
+Read saved Evidence summaries in every selected Daily. Verify current direction and pending reconsiderations through durable links, rather than trusting the summary alone. When those links are absent or today's record has no substantive content, consult the most recent substantive Daily and retain its date: an older decision is context, not proof of today's state. Both older Check-in/Intended outcomes records and newer judgment-only records are usable.
 
-## 2. Check in
+Expand into relevant Daily, Project, Area, or Routine history only to understand a change, repeated failure, previous intervention, contradiction, or current decision. Match trend claims to the history actually inspected; there is no fixed record count or requirement to traverse all active objects. Stop when enough is known to discuss the decision, or when what remains requires the user's interpretation.
 
-Ask compactly for current mode or energy, capacity, constraints, intended outcomes, and fixed commitments. Use existing context to avoid asking for facts already known; invite corrections. When the Control Policy is configured, use it as the user's default planning constraints.
+Absent, stale, partial, unavailable, or failed Evidence remains explicit; missing records do not establish inactivity. Saved summaries are not a Refresh. Any decision-relevant external read follows the enabled Source Contract and its access and permission boundaries; Open does not automatically refresh sources or write `## Evidence`. Source facts alone do not establish intent, productivity, completion, or health interpretation.
 
-Complete when the user has supplied or confirmed enough context for today's plan.
+Complete when the current decision has enough grounded context for discussion and material gaps are identified.
 
-## 3. Propose and commit the plan
+## 2. Surface and discuss
 
-Draft a small outcome-focused plan with realistic constraints and a next action. Compare it with each configured Control Policy field. Name any conflict and ask the user to revise the plan or confirm a current-day override; an override belongs in today's Daily record and does not modify the Control Policy.
+Briefly surface the relevant observations and material uncertainty before asking questions. Distinguish source-attributed facts, user statements, and Agent hypotheses. Offer an interpretation only when warranted; a stable day can take a short path without a hypothesis or check-in questionnaire.
 
-Show the plan before writing. Let the user revise or confirm priorities, commitments, and any override.
+Ask only questions whose answers could change a judgment, intervention, plan, or consequential update. Energy, capacity, commitments, and intended outcomes are useful inputs when relevant, not mandatory fields. On return after interruption, start from current reality without missed-day backfill or ritual debt. Preserve any existing same-day decisions and Shutdown; invocation alone does not mean the user should restart work.
 
-Write the confirmed plan into the Daily record's `## Open` section, preserving other sections. Keep `### Policy overrides` as `- None.` when no override was confirmed; otherwise replace it with the confirmed current-day override. Read it back.
+For repeated failure, consider execution, scope, acceptance criteria, tooling, direction, capacity, and surrounding context before proposing another smaller task. Reduced project activity or increased reading does not establish avoidance or a need to restore the old plan. Recovery, exploration, reconsideration, and normal variation remain possible. Let importance and uncertainty determine discussion depth; internal distinctions need no user-selected mode or new route.
 
-Complete when the durable Daily record matches the user's confirmation.
+Complete when the user has enough context to decide, including a well-framed unresolved question when further judgment is premature.
 
-## 4. Refresh current context
+## 3. Decide; plan when useful
 
-Update `context/now.md` from the committed Daily record and active Area, Project, and Routine records. Include `Updated` and `Derived from` links. Read it back.
+Establish the user's choice, or leave the direction unchanged. Revisit relevant earlier interventions: an ineffective suggestion may call for revising the judgment, rather than repeating the advice. When useful, briefly capture why the direction was chosen and what would warrant reconsideration; no review date, score, task, or scheduled follow-up is required.
 
-Complete when the summary points to durable sources and contains no unsupported claims.
+If execution planning helps, propose outcomes, constraints, and a next action at useful granularity. Compare the proposal with each configured Control Policy field. Surface conflicts and let the user revise the proposal or confirm a current-day override. Even without a plan, make effects on existing commitments and consequential constraints visible. Long-term policy changes remain separately confirmed work under their owning route.
+
+An explicit decision already made by the user confirms accurate recording of that decision; do not reconfirm each field. Confirm any newly introduced consequential interpretation, commitment, override, or lasting change before recording it. An unconfirmed Agent hypothesis remains attributed and uncertain, never an accepted account of the user's intent. Keep proposed writing visible and follow the root's write permissions.
+
+Complete when the choice or unresolved question is clear and any proposed consequential additions have the required confirmation. If nothing new or changed merits durable preservation, finish without a Daily or summary write.
+
+## 4. Preserve useful context
+
+For a durable change, create today's Daily from its template only if needed, or adapt the existing `## Open` section without replacing prior content or unrelated user writing. Preserve older formats; no historical migration is required. Use only the optional sections that carry useful information:
+
+- **Situation** — decision-relevant facts or attributed user statements; link or refer to Evidence rather than copying its entire summary.
+- **Judgment** — discussed conclusions or unresolved questions, with attribution and material uncertainty.
+- **Direction** — the user's confirmed choice and any useful reason or reconsideration condition.
+- **Plan** — execution detail only when useful.
+
+Preserve `### Policy overrides` and any already confirmed current-day override. Use `- None.` when no override applies; replace it only with a newly confirmed override. Save conclusions, not a transcript. Read back the durable change before deriving a `context/now.md` update, if the current summary needs one. Retain its existing structure, `Updated`, and `Derived from` links; decisions must have a durable source and unchanged context needs no cosmetic rewrite.
+
+Complete when the owned durable changes match the confirmed discussion, readback is complete, and any summary update points to those sources. Report the actual outcome, including deliberate no-write completion.

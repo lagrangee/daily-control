@@ -4,7 +4,7 @@ English | [简体中文](README.zh-CN.md)
 
 **Let an AI agent help run your day without silently owning your priorities.**
 
-Daily Control is an agent-native, local-first control loop built from ordinary conversations and durable Markdown. The Agent helps you plan, check factual evidence, reflect, and recover context; you retain authority over priorities, constraints, interpretation, permissions, and consequential changes.
+Daily Control is an agent-native, local-first control loop built from ordinary conversations and durable Markdown. After you invoke Daily Control, the Agent observes available context, helps you discuss and choose direction, plans when useful, and reflects with you; you retain authority over priorities, constraints, interpretation, permissions, and consequential changes.
 
 Four boundaries keep that relationship honest:
 
@@ -37,14 +37,14 @@ weekly-review
 extend
 ```
 
-Natural-language requests such as “use Daily Control to open my day” select the same routes. `/daily-control <route>` is the recommended explicit syntax, not a dependency on one Agent Surface.
+Ordinary project conversation does not start Daily Control. Natural-language requests such as “use Daily Control to open my day” select the same routes. `/daily-control <route>` is the recommended explicit syntax, not a dependency on one Agent Surface.
 
 ## See the control loop
 
 This synthetic example uses a Control Policy configured by the user; Daily Control supplies no default limits.
 
 ```text
-You: I want to move Atlas, Billing, and Launch today.
+You: /daily-control open — I want to move Atlas, Billing, and Launch today.
 
 Agent: Your configured policy allows one Primary Outcome, and today's
        capacity is about four hours. Putting all three into today's plan
@@ -54,9 +54,9 @@ You: Keep Atlas primary. Move Billing to tomorrow and leave Launch in backlog.
 
 Agent: Proposed Open: Atlas is the Primary Outcome; Billing is tomorrow's
        anchor; Launch remains in backlog. No policy override is needed.
-       Shall I write this plan?
+       Your explicit choice confirms this direction; I will record it.
 
-You: Yes. Later: /daily-control shutdown
+You: Later: /daily-control shutdown
 
 Agent: Source Evidence shows three hours of coding activity on Atlas. That
        proves activity, not that Atlas shipped. What actually moved today?
@@ -68,6 +68,23 @@ Agent: I will record that outcome, the pending review, and Billing as the
 ```
 
 Policy surfaces the tradeoff, the user decides, Evidence stays factual, and the resulting judgment becomes durable history only after confirmation.
+
+Open can also end without an execution plan:
+
+```text
+You: /daily-control open — I am back from travel and unsure about Atlas.
+
+Agent: Your last Shutdown left acceptance criteria unresolved. Saved reading
+       Evidence increased across the two selected records, but project coverage
+       is missing. That does not establish why project work changed. Is the
+       acceptance disagreement still what makes the next step uncertain?
+
+You: Yes. I want to reconsider those criteria, with no execution commitment today.
+
+Agent: I will record that choice and the unresolved question in Open.
+```
+
+A stable day can simply retain an existing direction without another check-in or write. Older records remain intact; returning creates no missed-day diary debt. Optional Controller Style in the Context Root's `AGENTS.md` personalizes how the Agent challenges and discusses, separately from planning constraints.
 
 ## Truth flow
 
@@ -148,7 +165,7 @@ Agent Surfaces can share this default when they load the Skill and can access th
 /daily-control extend
 ```
 
-- **open** checks current capacity and configured Control Policy before committing a plan.
+- **open** observes existing context, discusses what matters, and records a confirmed direction or judgment when useful. Execution plans remain subject to configured Control Policy; unchanged context needs no write.
 - **refresh** gathers enabled Sources into minimal, source-attributed Evidence.
 - **shutdown** records outcomes, drift, learning, and the next anchor without converting Evidence into judgment.
 - **weekly-review** reviews a closed interval and commits policy or priority changes only after separate confirmation.
