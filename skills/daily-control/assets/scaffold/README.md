@@ -13,6 +13,8 @@ This directory is a private Daily Control Context Root. Use the installed `daily
 /daily-control extend
 ```
 
+Open reads existing context first; it can end with a direction, judgment, recovery, unresolved question, or plan, and needs no write when nothing durable changes. Optional Controller Style in `AGENTS.md` personalizes conversation, separately from Control Policy.
+
 The bare command shows help and suggests one next route without running it. The Agent reads [AGENTS.md](AGENTS.md) first. Stable preferences, the optional Control Policy, and instance-specific contracts live under `context/`. Durable history lives in `daily/`, `weekly/`, `areas/`, `projects/`, `routines/`, and `evidence/`.
 
 `context/now.md` is a rebuildable working summary, not historical truth. Sync and backup are managed outside Daily Control.

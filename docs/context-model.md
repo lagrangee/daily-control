@@ -24,6 +24,10 @@ Daily, Weekly, Area, Project, Routine, and Evidence records are durable history.
 
 The Agent surfaces a conflict between a proposed Daily plan and a configured policy. The user may revise the plan or confirm a current-day override. The override belongs in that Daily record; setup or a separately confirmed weekly review owns changes to the long-term policy.
 
+### Controller Style
+
+An optional section in the Context Root's `AGENTS.md` expresses user-owned preferences for directness, challenge depth, and conversation. It is separate from Control Policy's planning constraints and does not grant authority for consequential changes. Default behavior needs no setup interview.
+
 ### Area, Project, and Routine
 
 | Concept | Meaning | Example |
@@ -36,7 +40,7 @@ They are linked, not nested. A Project may serve several Areas; a Routine may su
 
 ### Cadence
 
-A recurring Agent-guided control moment. Daily Control v0.1 defines open, refresh, shutdown, and weekly-review. Scheduling belongs to the user and their Agent Surface.
+A recurring Agent-guided control moment. Daily Control defines open, refresh, shutdown, and weekly-review. Open observes, surfaces context, discusses, decides, and plans only when useful. A judgment-only or no-write interaction can complete the cadence. Scheduling belongs to the user and their Agent Surface.
 
 ### Evidence Capability and Source Adapter
 

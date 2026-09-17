@@ -1,18 +1,18 @@
 ---
 name: daily-control
-description: Run a local Markdown control loop for daily planning, evidence refresh, shutdown reflection, weekly review, setup, help, or source extension. Use when the user invokes Daily Control, asks what to do next in a Daily Control Context Root, or wants an Agent to maintain this planning-and-reflection context.
+description: Use only when the user explicitly invokes Daily Control. A local Markdown control loop for understanding the situation, choosing direction, planning when useful, and reflecting.
 license: MIT. See LICENSE
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Daily Control
 
-Guide the user through a local-first control loop. The Context Root is shared context, not application state; ordinary Agent reasoning performs the work.
+After explicit user invocation, guide a local-first adaptive control loop. The Context Root is shared context, not application state; ordinary Agent reasoning performs the work.
 
 ## Resolve the route
 
-Resolve one of the routes below. `/daily-control <route>` is the recommended explicit syntax; an equivalent natural-language request selects the same route.
+Start only when the user explicitly invokes Daily Control. Ordinary project discussion or frustration does not initiate a session. `/daily-control <route>` is the primary interface; equivalent natural language within an explicit invocation selects the requested route.
 
 - **help** or a bare `/daily-control` — follow [Help](#help) below without loading another reference.
 
@@ -33,11 +33,13 @@ Resolve the Context Root using the rules below. If no root is available, show th
 
 When a root is resolved, read its `AGENTS.md`, preferences, today's Daily record when present, and Source Contracts. Recommend at most one next route from durable content rather than heading presence alone:
 
-- No Daily record or no confirmed Open content: **open**.
+- Completed Shutdown: state that today's loop is complete without recommending another route. Preserve that result even if Open is absent.
+- Otherwise, no Daily record or no substantive confirmed Open content: **open**.
 - Confirmed Open, incomplete Shutdown, and at least one enabled Source whose current Evidence is not refreshed: **refresh**.
-- Confirmed Open and no enabled Sources: **shutdown** when the user is ready; mention **extend** as optional.
+- Confirmed Open and no enabled Sources: **shutdown** when the user is ready.
 - Current Evidence and incomplete Shutdown: **shutdown**.
-- Completed Shutdown: state that today's loop is complete without recommending another route.
+
+A confirmed judgment or direction counts as Open content even without a plan; empty headings and template placeholders do not. Read any saved Evidence with the Daily, preserving stale or incomplete status without inferring inactivity.
 
 List weekly-review in the help text, but do not infer that it is due. Treat `context/now.md` only as supporting context; durable records decide the suggestion.
 

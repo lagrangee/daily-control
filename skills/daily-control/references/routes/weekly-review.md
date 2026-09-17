@@ -12,15 +12,17 @@ Complete when one closed interval is explicit.
 
 Read relevant Daily records plus active Area, Project, Routine, and lightweight Evidence records. Identify source-backed facts, the user's earlier interpretations, open loops, and changes since the prior review. Preserve unknowns and missing days.
 
-Draft outcomes, drift, lessons, Area observations, Project movement, Routine observations, and candidate adjustments. Do not turn evidence into health, productivity, or moral judgment.
+Draft relevant outcomes, drift, lessons, Area observations, Project movement, Routine observations, and candidate adjustments. Do not turn evidence into health, productivity, or moral judgment.
+
+When records in the closed interval support it, use the existing Learning or adjustment space to consider the control loop itself: whether an intervention helped, unnecessary ceremony made it hard to use, or repeated problems went unaddressed. Relate feedback to the recorded decision and its premise; missing sessions or Evidence alone establish neither failure nor success. Surface supported lessons and uncertainty without adding a mandatory questionnaire.
 
 Complete when every material claim has a durable source or is labeled as a user decision to confirm.
 
 ## 3. Confirm and commit
 
-Show the draft and separately name any proposed priority, Project, Routine, Control Policy, or other constraint change. The user decides those changes.
+Show the draft and separately name any proposed priority, Project, Routine, Control Policy, Controller Style, or other constraint change. The user decides those changes.
 
-Write the confirmed review to the matching Weekly record and read it back. Apply separately confirmed changes to their owner records, including `context/control-policy.md` when applicable, then read those back. A current-day override is not evidence that the long-term policy should change.
+Write the confirmed review to the matching Weekly record and read it back. Apply separately confirmed changes to their owner records, including `context/control-policy.md` or the Controller Style section in the root's `AGENTS.md` when applicable, then read those back. Preserve unrelated constitution content and existing style when no style change was confirmed. A current-day choice or override does not authorize changing long-term defaults.
 
 Complete when durable records match the user's decisions.
 

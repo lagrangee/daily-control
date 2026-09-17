@@ -1,6 +1,6 @@
 # Daily Control Guide
 
-Daily Control helps you and an Agent maintain useful context without turning your life into an application database. You speak naturally; the Agent uses the installed Skill and your Markdown Context Root to plan, gather factual evidence, and reflect with you.
+Daily Control helps you and an Agent maintain useful context without turning your life into an application database. Explicitly invoke Daily Control, then speak naturally; the Agent uses the installed Skill and your Markdown Context Root to observe, discuss, decide, plan when useful, and reflect with you. Ordinary project discussion does not initiate the Skill.
 
 Run `/daily-control` or `/daily-control help` at any time for a read-only route summary. With a valid resolved Context Root, it may suggest one next route from today's durable record; it never runs the suggestion automatically.
 
@@ -21,13 +21,21 @@ The default works across working directories and Agent Surfaces that load the Sk
 
 Setup always creates `context/control-policy.md`. You may configure outcome limits, a capacity boundary, foreground WIP, and a default rule for new scope, or leave the policy explicitly unconfigured. Daily Control supplies no default limits.
 
+Optional Controller Style in the root's `AGENTS.md` controls conversational directness and depth, separately from planning constraints. Defaults work without a style interview; adoption preserves your existing preferences. Style does not grant permissions or replace factual accuracy and Human Authority.
+
 ## 2. Use the control loop
 
 ### Open
 
-`/daily-control open` creates or resumes today's Daily record, checks your current constraints, proposes a plan, and writes only after you confirm it. It also refreshes the rebuildable `context/now.md` working summary.
+`/daily-control open` reads your constitution, preferences, policy, current summary, and today's Daily with its saved Evidence before asking. It verifies direction against durable records and follows relevant history when a change, repeated failure, or unresolved decision needs context. Missing Evidence is a coverage gap, not proof of inactivity; Open does not automatically refresh sources.
+
+On a stable day, a short exchange may be enough. After an interruption, start from current reality without reconstructing missed check-ins. The outcome may be recovery, exploration, a judgment, an unresolved question, an unchanged direction, or an execution plan. Questions follow the decision, not a fixed questionnaire.
+
+Situation, Judgment, Direction, and Plan are optional Open sections. The Agent preserves old Daily formats and existing content. Your explicit decision confirms accurate recording without field-by-field reconfirmation; new consequential interpretations or commitments need your confirmation. When no durable information changes, Open can finish without writing. Otherwise, it writes and reads back the owned Daily content before updating the derived `context/now.md` only if needed.
 
 When the Control Policy is configured, open checks the proposal against it. A conflict remains visible: you may revise the plan or confirm a current-day override. The Daily record keeps the result under `### Policy overrides`; an override does not silently change the long-term policy.
+
+A later Open can revisit a meaningful intervention using its recorded reason and available feedback. If it did not help, the discussion can revise the judgment instead of repeating the advice. A brief reconsideration condition is useful when it clarifies the choice; no score, review date, or scheduled follow-up is required.
 
 ### Refresh
 
@@ -37,13 +45,15 @@ Evidence describes what a source reported. It does not decide whether you were p
 
 ### Shutdown
 
-`/daily-control shutdown` helps you record outcomes, drift, learning, and the next anchor. Reflection remains yours: the Agent drafts from your statements and available Evidence, then asks you to confirm consequential interpretation.
+`/daily-control shutdown` first drafts a closeout from today's Daily, saved Evidence, and the current conversation when available. You supply material missing interpretation or corrections, rather than repeat the day. Earlier conversations on another Agent Surface are not assumed accessible; missing or partial Evidence remains unknown, and Refresh runs only on request.
+
+The closeout can preserve a judgment, recovery direction, or unresolved question without requiring completed tasks or a next action. Your explicit decisions confirm accurate recording; new consequential interpretation or carry-forward needs confirmation. The Agent preserves Open, Evidence, and unrelated content, reads back Shutdown, then updates the existing summary only when needed. An unchanged closeout can finish without a write.
 
 ### Weekly review
 
 `/daily-control weekly-review` reviews a closed weekly interval across Daily records, Areas, Projects, and Routines. Scheduling is not built in; you and your Agent Surface decide when to invoke it.
 
-A weekly review may propose a Control Policy change, but the Agent writes it only after separate confirmation.
+When the reviewed records support it, the review can also discuss whether an intervention helped or the loop created unnecessary ceremony. This uses the existing review space, not another questionnaire. Lasting changes to priorities, Control Policy, Controller Style, or other constraints are separately confirmed before the Agent updates their owner records.
 
 ## 3. Organize context
 
